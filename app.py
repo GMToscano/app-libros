@@ -7,7 +7,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:1234@localhost:5432/db3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://nppmiwzuaevccp:16b0b68da61c28015b9b80b0710579c4300b7ccbb12555d5382a79d39d0c111a@ec2-54-198-213-75.compute-1.amazonaws.com:5432/d83pmtg1gh7c83'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'SecretKey'
 
