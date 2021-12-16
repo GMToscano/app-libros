@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        {% block head %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+            <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tu libreria online</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <style type="text/css">
+        .header-fondo {
+            background-image: url("https://images2.alphacoders.com/261/26102.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #999;
+        }
+        .navbar{
+            background-color: transparent;
+            background-image: none;
+        }
+        .navbar-link{
+            background-color: white;
+            background-image: none;
+
+        }
+        .caption{
+            background-color: gold;
+        }
+        .cap{
+            background-color: greenyellow;
+        }        
+    </style>
+     <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="../">
+                        <img src="\static\images\libros1.png"  width="75" height="75" >
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul>
+                                <li ><a href="/leerfav">Home</a></li>
+                                <li ><a href="/leerlibros">Libros</a></li>
+                                <li><a href="/leerautores">Autores</a></li>
+                                <li><a href="/leeredit">Editoriales</a></li>
+                                <li><a href="/leergenero">Generos</a></li>
+                                <li><a href="/">Cerrar sesion</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+        {% endblock %}    
+    </head>
+
+    <body>
+        <div id="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        <div id="footer">
+            {% block footer %}
+                &copy; Copyrigth 2021 by <a href="#">Gerardo Marcelo Toscano Cortez</a>
+            {% endblock %}
+        </div>
+    </body>
+
+</html>

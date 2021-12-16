@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<section class="hero is-fullheight is-default is-bold">
+        <div class="hero-body header-fondo">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column is-5">
+                        <figure class="image is-4by3">
+                            <img src="https://picsum.photos/800/600/?random" alt="Description">
+                        </figure>
+                    </div>
+                    <div class="column is-6 is-offset-1">
+                        <table class="table">
+                            <caption class="caption"><strong>MIS FAVORITOS</strong></caption>
+                          <tr>
+                            <td><strong>Libro</strong></td>
+                            <td><strong>Nombre del autor</strong></td>
+                            <td colspan="2"><strong>Opciones</strong></td>
+                          </tr>
+                          {% for favo in consulta %}
+                          <tr>
+                              <td>{{favo.titulo_libro}}</td>
+                              <td>{{favo.nombre_autor}}</td>
+                              <td><a class="button is-danger" href="/eliminarfav/{{favo.id_lista_favoritos}}">Quitar</a></td>
+                          </tr>
+                          {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>And this is the bottom</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</section>
+    <script src="../js/bulma.js"></script>
+
+
+{% endblock %}

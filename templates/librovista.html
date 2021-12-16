@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section class="hero is-fullheight is-default is-bold">
+       
+        <div class="hero-body header-fondo">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+                        <table class="table">
+                            <caption class="cap"><strong>lIBROS</strong></caption>
+                          <tr>
+                            <td><strong>Titulo</strong></td>
+                            <td><strong>Genero</strong></td>
+                            <td><strong>Autor</strong></td>
+                            <td><strong>Editorial</strong></td>
+                            <td><strong>Formato</strong></td>
+                            <td><strong>Volumen</strong></td>
+                            <td><strong>Fecha de publicacion</strong></td>
+                            <td><strong>Numero de paginas</strong></td>
+                            <td colspan="2"><strong>Opciones</strong></td>
+                          </tr>
+
+                        
+                        
+                          {% for libro in consulta %}
+                          <tr>
+                              <td>{{libro.titulo_libro}}</td>
+                              <td>{{libro.nombre_genero}}</td>
+                              <td>{{libro.nombre_autor}}</td>
+                              <td>{{libro.nombre_editorial}}</td>
+                              <td>{{libro.formato}}</td>
+                              <td>{{libro.volumen}}</td>
+                              <td>{{libro.fecha_publicacion}}</td>
+                              <td>{{libro.numero_paginas}}</td>
+                              <td><a class="button is-success" href="/editarlibro/{{libro.id_libro}}">Editar</a> 
+                                <a class="button is-danger" href="/eliminarlibro/{{libro.id_libro}}">Eliminar</a> 
+                                <a class="button is-info" href="/agregarfav/{{libro.id_libro}}">Me gusta</a></td>
+                          </tr>
+                          {% endfor %}
+                        </table>
+                        <div class="buttons">
+                            <a class="button is-success" href="/registralibro" >Agregar un nuevo libro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>And this is the bottom</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../js/bulma.js"></script>
+{% endblock %}

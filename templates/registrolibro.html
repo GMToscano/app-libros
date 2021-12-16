@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body header-fondo">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+                    <form action="/registrar_libro" method="post" class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nombre del Libro</label>
+                                        <input class="input" type="text" name="nombreLibro" placeholder="Ingrese el Nombre del Libro">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Cantidad de Paginas</label>
+                                        <input class="input" name="numeroLibro" type="number" min="0" step="10" placeholder="Ingrese el numero de Paginas">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Volumen</label>
+                                        <input class="input" type="number" min="0" step="1" name="volumen" placeholder="Volumen de la edicion">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Editorial</label>
+                                        <select class="input" name="editorial">
+                                            {% for editorial in editoriales %}
+                                            <option value="{{editorial.id_editorial}}">{{editorial.nombre_editorial}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Fecha de Publicacion</label>
+                                        <input class="input" type="date" name="fecha" placeholder="Fecha de Publicacion">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Formato del Libro</label>
+                                        <input class="input" type="text" name="formato" placeholder="Formato del Libro">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Genero</label>
+                                        <select class="input" name="genero">
+                                            {% for genero in generos %}
+                                            <option value="{{genero.id_genero}}">{{genero.nombre_genero}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Autor</label>
+                                        <select class="input" name="autor">
+                                            {% for autor in autores %}
+                                            <option value="{{autor.id_autor}}">{{autor.nombre_autor}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Agregar">
+                                        <a class="button is-warning" href="/leerlibros" >Regresar</a>
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

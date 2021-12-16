@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section class="hero is-fullheight is-default is-bold">
+       
+        <div class="hero-body header-fondo">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+                        <table class="table">
+                            <caption class="cap"><strong>EDITORIALES</strong></caption>
+                          <tr>
+                            <td><strong>Nombre de la editorial</strong></td>
+                            <td colspan="2"><strong>Opciones</strong></td>
+                          </tr>
+                        
+                          {% for edit in consulta %}
+                          <tr>
+                              <td>{{edit.nombre_editorial}}</td>
+                              <td><a class="button is-success" href="/editaredit/{{edit.id_editorial}}">Editar</a> <br>
+                                <a class="button is-danger" href="/eliminaredit/{{edit.id_editorial}}">Eliminar</a></td>
+                          </tr>
+                          {% endfor %}
+                        </table>
+                        <div class="buttons">
+                            <a class="button is-success" href="/registrarEditorial" >Agregar una nueva editorial</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>And this is the bottom</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../js/bulma.js"></script>
+{% endblock %}

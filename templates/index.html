@@ -1,0 +1,53 @@
+<head>
+    {% block head %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    {% endblock %}    
+</head>
+
+
+{% block content %}
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-contered">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form action="/login" method="post" class="box">
+                            <div class="field">
+                                <label for="" class="label">Email</label>
+                                <div class="control has-icons-left">
+                                    <input type="email" name="email" placeholder="" class="input" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                            <label for="" class="label">Password</label>
+                            <div class="control has-icons-left">
+                                <input type="password" name="password" class="input" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+
+                            </div>
+                            </div>
+                            <div class="field">
+                                <a href="/registrar">No estas registrado?</a>
+                            </div>
+                            <div class="field">
+                                <button class="button is-success">
+                                    login
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+                    <form action="/modificarA" method="post" class="box">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nombre del autor</label>
+                                        <input class="input" type="text" name="nombreAutor" placeholder="Ingrese el Nombre del autor" value="{{autor.nombre_autor}}">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Fecha de nacimiento</label>
+                                        <input class="input" name="FeNac" type="date" placeholder="Fecha de nacimiento" value="{{autor.fecha_nac}}">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nacionalidad</label>
+                                        <input class="input" type="text" name="nacionalidad" placeholder="Nacionalidad del autor" value="{{autor.nacionaliad}}">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input type="hidden" name="idautor" value="{{autor.id_autor}}">
+                                        <input class="button is-success" type="submit" value="Modificar">
+                                        <a class="button is-warning" href="/leerautores" >Regresar</a>
+                                    </p>
+                                </div>
+                            
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+                    <form action="/registrar_genero" method="post" class="box">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nombre del Genero</label>
+                                        <input class="input" type="text" name="nombreGenero" placeholder="Ingrese el nombre del genero">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Agregar">
+                                    </p>
+                                </div>
+                            </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

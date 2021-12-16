@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+                    <form action="/modificarE" method="post" class="box">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nombre de la editorial</label>
+                                        <input class="input" type="text" name="nombreedit" placeholder="Ingrese el Nombre de la editorial" value="{{edit.nombre_editorial}}">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input type="hidden" name="idedit" value="{{edit.id_editorial}}">
+                                        <input class="button is-success" type="submit" value="Modificar">
+                                        <a class="button is-warning" href="/leeredit" >Regresar</a>
+                                    </p>
+                                </div>
+                            
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
